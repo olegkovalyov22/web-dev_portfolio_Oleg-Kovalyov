@@ -13,6 +13,13 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     
+    <!-- иконка сайта -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- слайдер с Slick JS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
@@ -27,12 +34,13 @@
         <div class="container">
             <div class="header__inner">
                 <div class="header__logo"  data-scroll="#intro">
+                    <img class="logo__img" src="android-chrome-192x192.png" alt="">
                     <div class="logo__name">Oleg Kovalyov</div>
                 </div>
 
                 <div class="navbar" id="navbar">  <!--  |  active  -->
                     <a class="nav__link" id="navlin" href="#" data-scroll="#intro">Обо мне</a>  <!--  |  active  -->
-                    <a class="nav__link" id="navlin" href="#" data-scroll="#two">link 2</a>
+                    <a class="nav__link" id="navlin" href="#" data-scroll="#two">Мои проекты</a>
                     <a class="nav__link" id="navlin" href="#" data-scroll="#three">link 3</a>
                     <a class="nav__link" id="navlin" href="#" data-scroll="#four">link 4</a>
                     <a class="nav__link" id="navlin" href="#" data-scroll="#five">link 5</a>
@@ -61,20 +69,22 @@
     
                                 <div class="photo__social">
                                     <div class="messengers">
-                                        <a class="mes__item  mes_it--bord_tl  mes_it--rad_tl" href="#" target="_blank">
-                                            <i class="fab fa-facebook-f"></i>
+                                        <a class="mes__item  mes_it--bord_tl  mes_it--rad_tl" href="https://t.me/JesusCrazy" target="_blank">
+                                            <i class="fab fa-telegram"></i>
                                         </a>
-                                        <a class="mes__item  mes_it--bord_tr  mes_it--rad_tr" href="#" target="_blank">
-                                            <i class="fab fa-twitter"></i>
+                                        <a class="mes__item  mes_it--bord_tr  mes_it--rad_tr" href="https://github.com/olegkovalyov22" target="_blank">
+                                            <!-- <i class="fab fa-twitter"></i> -->
+                                            <i class="fab fa-github"></i>
                                         </a>
                                     </div>
     
                                     <div class="messengers">
-                                        <a class="mes__item  mes_it--bord_bl  mes_it--rad_bl" href="#" target="_blank">
-                                            <i class="fab fa-pinterest-p"></i>
+                                        <a class="mes__item  mes_it--bord_bl  mes_it--rad_bl" href="https://oleg.kovalyov_mfw@mail.ru" target="_blank">
+                                            <i class="fas fa-at"></i>
                                         </a>
-                                        <a class="mes__item  mes_it--bord_br  mes_it--rad_br" href="#" target="_blank">
-                                            <i class="fab fa-instagram"></i>
+                                        <a class="mes__item  mes_it--bord_br  mes_it--rad_br" href="https://oleg.kovalyov.mfw@gmail.com" target="_blank">
+                                            <!-- <i class="fab fa-instagram"></i> -->
+                                            <i class="fas fa-envelope"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -96,7 +106,7 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>  <!-- /.team__item 01 -->
+                        </div>  <!-- /.intro__photo -->
 
                         <!-- <div class="head">
                             <div class="head__inner">
@@ -159,6 +169,10 @@
                             <!-- <div class="text__line  tt_l--one"></div> -->
                             <!-- <div class="text__line  tt_l--one"></div> -->
                             <!-- <div class="text__line  tt_l--one"></div> -->
+
+                            <div class="intro__btn">
+                                <a class="int__btn" id="navlin" href="#" data-scroll="#two">To projects<!-- <span></span> --></a>
+                            </div>
                             
                             <!-- К каждому проекту стараюсь подходить серьёзно и улучшать их по мере улучшений знаний. -->
                         </div>
@@ -180,16 +194,182 @@
         <section class="section" id="two">
             <div class="container">
                 <div class="section__header">
-                    <div class="section__title">Name Section</div>
-                    <div class="section__subtitle">Lorem ipsum dolor sit amet proin gravida nibh vel velit</div>
+                    <div class="section__title">Мои Проекты</div>
+                    <div class="section__subtitle">проекты на которых учился, учусь, модифицирую</div>
+                    <!-- <div class="section__subtitle">Их версии, как они были задуманы и как они были модифицированы</div> -->
                 </div>
+
+                <!-- <div class="projects">
+                    <div class="project__item"  id="projectItemOne">
+                        <div class="project__column  project__column--one" id="0projColOne">
+                            <div class="project__inner" id="0projColOne">
+                                <div class="project__photo">
+                                    <img src="assets/media/images/projects/project01.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project__column  project__column--two">
+                            <div class="project__info">
+                                <div class="project__title">Name Project</div>
+                                <div class="project__title">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime sequi saepe illum aliquid. Necessitatibus officiis illum doloremque dolores alias rerum tempore fugiat, soluta, minima in laboriosam, dolor minus corporis?
+                                </div>
+                                <a class="btn" href="#">Open Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- project__col--photo    proj-Left      id="projectItemOne"  id="0projColOne"       project__col--info     proj-Right  -->
+                
+                
+                <div class="projects">
+
+                    <div class="project__item">
+                        <div class="project__inner">
+                            <div class="project__column" id="pj_col_item-1">
+                                <div class="project__photo">
+                                    <img class="project__img  proj__img--one" src="assets/media/images/projects/project01.png" alt="">
+                                </div>
+                            </div>  <!-- /.project__column -->
+
+                            <div class="project__column" id="pj_col_item-2">
+                                <div class="project__info  project__info--leftPad">
+                                    <div class="project__head">
+                                        <div class="project__name">
+                                            <div class="project__title">MoGo</div>
+                                            <div class="project__subtitle">Project #001:</div>
+                                        </div>
+                                        <img class="proj__img" src="assets/media/images/projects/project01-1.png" alt="">
+                                    </div>  <!-- /.project__head -->
+
+                                    <div class="project__text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime sequi saepe illum aliquid. Necessitatibus officiis illum doloremque dolores alias rerum tempore fugiat, soluta, minima in laboriosam, dolor minus corporis?
+                                        Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст 
+                                    </div>
+
+                                    <div class="project__btn">
+                                        <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a>
+                                        <a class="btn  --marginNone  --widthFull" href="#"><span>modified version</span> | View project</a>
+                                    </div>
+                                </div>  <!-- /.project__info -->
+                            </div>  <!-- /.project__column -->
+                        </div>  <!-- /.project__inner -->
+                    </div>  <!-- /.project__item 01 -->
+
+                    <div class="project__item">
+                        <div class="project__inner">
+                            <div class="project__column" id="pj_col_item-2">
+                                <div class="project__photo">
+                                    <img class="project__img  proj__img--two" src="assets/media/images/projects/project02.png" alt="">
+                                </div>
+                            </div>  <!-- /.project__column -->
+
+                            <div class="project__column" id="pj_col_item-1">
+                                <div class="project__info  project__info--rightPad">
+                                    <div class="project__head">
+                                        <div class="project__name">
+                                            <div class="project__title">tajam</div>
+                                            <div class="project__subtitle">Project #002:</div>
+                                        </div>
+                                        <img class="proj__img" src="assets/media/images/projects/project02-1.png" alt="">
+                                    </div>  <!-- /.project__head -->
+
+                                    <div class="project__text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime sequi saepe illum aliquid. Necessitatibus officiis illum doloremque dolores alias rerum tempore fugiat, soluta, minima in laboriosam, dolor minus corporis?
+                                        Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст 
+                                    </div>
+
+                                    <div class="project__btn">
+                                        <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a>
+                                        <a class="btn  --marginNone  --widthFull" href="#"><span>modified version</span> | View project</a>
+                                    </div>
+                                </div>  <!-- /.project__info -->
+                            </div>  <!-- /.project__column -->
+                        </div>  <!-- /.project__inner -->
+                    </div>  <!-- /.project__item 02 -->
+
+                    <div class="project__item">
+                        <div class="project__inner">
+                            <div class="project__column" id="pj_col_item-1">
+                                <div class="project__photo">
+                                    <img class="project__img  proj__img--three  project__img--width" src="assets/media/images/projects/project03.png" alt="">
+                                </div>
+                            </div>  <!-- /.project__column -->
+
+                            <div class="project__column" id="pj_col_item-2">
+                                <div class="project__info  project__info--leftPad">
+                                    <div class="project__head">
+                                        <div class="project__name">
+                                            <div class="project__title">My Portfolio</div>
+                                            <div class="project__subtitle">Project #003:</div>
+                                        </div>
+                                        <img class="proj__img" src="assets/media/images/projects/project03-1.png" alt="">
+                                    </div>  <!-- /.project__head -->
+
+                                    <div class="project__text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime sequi saepe illum aliquid. Necessitatibus officiis illum doloremque dolores alias rerum tempore fugiat, soluta, minima in laboriosam, dolor minus corporis?
+                                        Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст 
+                                    </div>
+
+                                    <div class="project__btn">
+                                        <!-- <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a> -->
+                                        <a class="btn  --marginNone  --widthFull" href="#"><!-- <span>modified version</span> | -->View project</a>
+                                    </div>
+                                </div>  <!-- /.project__info -->
+                            </div>  <!-- /.project__column -->
+                        </div>  <!-- /.project__inner -->
+                    </div>  <!-- /.project__item 03 -->
+
+                    <div class="project__item  project__item--none">
+                        <div class="project__inner">
+                            <div class="project__column" id="pj_col_item-2">
+                                <div class="project__photo  proj__photo--none">
+                                    <!-- <img class="project__img  proj__img--two" src="assets/media/images/projects/project02.png" alt=""> -->
+                                    <span>Project preview</span>
+                                    <span>? ? ? ? ? ? ? ?</span>
+                                    <span>Project preview</span>
+                                    <span>? ? ? ? ? ? ? ?</span>
+                                    <span>Project preview</span>
+                                    <span>? ? ? ? ? ? ? ?</span>
+                                    <span>Project preview</span>
+                                    <span>? ? ? ? ? ? ? ?</span>
+                                    <span>Project preview</span>
+                                </div>
+                            </div>  <!-- /.project__column -->
+
+                            <div class="project__column" id="pj_col_item-1">
+                                <div class="project__info  project__info--rightPad  proj__info--none">
+                                    <div class="project__head">
+                                        <div class="project__name">
+                                            <div class="project__title">Futr.Project Name</div>
+                                            <div class="project__subtitle">Project #004:</div>
+                                        </div>
+                                        <span>?</span>
+                                        <!-- <img class="proj__img" src="assets/media/images/projects/000.png" alt=""> -->
+                                    </div>  <!-- /.project__head -->
+
+                                    <div class="project__text">
+                                        скоро скоро скоро скоро скоро 
+                                    </div>
+
+                                    <div class="project__btn">
+                                        <!-- <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a> -->
+                                        <a class="btn  --marginNone  --widthFull" href="#"><span>modified version</span> | View project</a>
+                                    </div>
+                                </div>  <!-- /.project__info -->
+                            </div>  <!-- /.project__column -->
+                        </div>  <!-- /.project__inner -->
+                    </div>  <!-- /.project__item 04 -->
+
+                </div>  <!-- /.projects -->
 
             </div>  <!-- /.container -->
             
-            <div class="section__footer">
+            <!-- <div class="section__footer">
                 <div class="section__text">Lorem ipsum dolor sit amet proin gravida</div>
                 <a class="btn" href="#">B T N</a>
-            </div>
+            </div> -->                               <!-- пока что не нужно -->
         </section>  <!-- /.section -> .00000 -->
 
         <section class="section  section--background" id="three">
