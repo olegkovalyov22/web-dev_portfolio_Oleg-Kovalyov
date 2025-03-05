@@ -14,11 +14,11 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     
     <!-- иконка сайта -->
-    <link rel="icon" type="image/png" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" href="assets/media/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/media/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/media/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/media/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/media/images/favicon/site.webmanifest">
 
     <!-- слайдер с Slick JS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -35,19 +35,36 @@
             <div class="header__inner">
                 <div class="header__logo"  data-scroll="#intro">
                     <img class="logo__img" src="android-chrome-192x192.png" alt="">
-                    <div class="logo__name">Oleg Kovalyov</div>
+                    <!-- <div class="logo__name">Oleg Kovalyov</div> -->
+                    <div class="logo__name">
+                        <div class="l_n_01">O</div>
+                        <div class="l_n_02">l</div>
+                        <div class="l_n_03">e</div>
+                        <div class="l_n_04">g</div>
+                        <div class="l_n_05">K</div>
+                        <div class="l_n_06">o</div>
+                        <div class="l_n_07">v</div>
+                        <div class="l_n_08">a</div>
+                        <div class="l_n_09">l</div>
+                        <div class="l_n_10">y</div>
+                        <div class="l_n_11">o</div>
+                        <div class="l_n_12">v</div>
+                    </div>
                 </div>
 
                 <div class="navbar" id="navbar">  <!--  |  active  -->
-                    <a class="nav__link" id="navlin" href="#" data-scroll="#intro">Обо мне</a>  <!--  |  active  -->
-                    <a class="nav__link" id="navlin" href="#" data-scroll="#two">Мои проекты</a>
-                    <a class="nav__link" id="navlin" href="#" data-scroll="#three">link 3</a>
-                    <a class="nav__link" id="navlin" href="#" data-scroll="#four">link 4</a>
-                    <a class="nav__link" id="navlin" href="#" data-scroll="#five">link 5</a>
-                    <a class="nav__link" id="navlin" href="#" data-scroll="#six">link 6</a>
-                    <a class="nav__link" id="navlin" href="#" data-scroll="#seven">link 7</a>
+                    <a class="nav__link" id="navlin" href="#intro" data-scroll="#intro">Hi, World</a>  <!--  |  active  -->
+                    <a class="nav__link" id="navlin" href="#two" data-scroll="#two">Мои проекты</a>
+                    <a class="nav__link" id="navlin" href="#three" data-scroll="#three">Обо мне</a>
+                    <a class="nav__link" id="navlin" href="#four" data-scroll="#four">Навыки</a>
+                    <a class="nav__link" id="navlin" href="#five" data-scroll="#five">link 5</a>
+                    <a class="nav__link" id="navlin" href="#six" data-scroll="#six">link 6</a>
+                    <a class="nav__link" id="navlin" href="#seven" data-scroll="#seven">link 7</a>
+                    
+                    <!-- <button id="theme-toggle"><img class="theme-icon" src="assets/media/images/header/moon_night_icon.svg" alt=""></button> -->
+                    <button id="theme-toggle"><i class="fas fa-moon"></i></button>
                 </div>
-                
+
                 <button class="nav-toggle" id="nav-toggle" type="button">  <!--  |  active  -->
                     <span class="nav-toggle__item">Menu</span>
                 </button>
@@ -57,7 +74,7 @@
 
     <div class="page">
 
-        <div class="intro  section--background"  id="intro">
+        <div class="intro  sect  section--background"  id="intro">
             <div class="container">
                 <div class="intro__inner">
                     <div class="intro__column  intro__column--one">
@@ -69,20 +86,20 @@
     
                                 <div class="photo__social">
                                     <div class="messengers">
-                                        <a class="mes__item  mes_it--bord_tl  mes_it--rad_tl" href="https://t.me/JesusCrazy" target="_blank">
+                                        <a class="mes__item  mes_it--bord_tl  mes_it--rad_tl" href="https://t.me/JesusCrazy" target="_blank" title="telegram">
                                             <i class="fab fa-telegram"></i>
                                         </a>
-                                        <a class="mes__item  mes_it--bord_tr  mes_it--rad_tr" href="https://github.com/olegkovalyov22" target="_blank">
+                                        <a class="mes__item  mes_it--bord_tr  mes_it--rad_tr" href="https://github.com/olegkovalyov22" target="_blank" title="github">
                                             <!-- <i class="fab fa-twitter"></i> -->
                                             <i class="fab fa-github"></i>
                                         </a>
                                     </div>
     
                                     <div class="messengers">
-                                        <a class="mes__item  mes_it--bord_bl  mes_it--rad_bl" href="https://oleg.kovalyov_mfw@mail.ru" target="_blank">
+                                        <a class="mes__item  mes_it--bord_bl  mes_it--rad_bl" href="https://oleg.kovalyov_mfw@mail.ru" target="_blank" title="mail.ru">
                                             <i class="fas fa-at"></i>
                                         </a>
-                                        <a class="mes__item  mes_it--bord_br  mes_it--rad_br" href="https://oleg.kovalyov.mfw@gmail.com" target="_blank">
+                                        <a class="mes__item  mes_it--bord_br  mes_it--rad_br" href="https://oleg.kovalyov.mfw@gmail.com" target="_blank" title="gmail.com">
                                             <!-- <i class="fab fa-instagram"></i> -->
                                             <i class="fas fa-envelope"></i>
                                         </a>
@@ -191,7 +208,7 @@
             </div>  <!-- /.container -->
         </div>  <!-- /.intro -->
 
-        <section class="section" id="two">
+        <section class="section  sect" id="two">
             <div class="container">
                 <div class="section__header">
                     <div class="section__title">Мои Проекты</div>
@@ -243,14 +260,52 @@
                                         <img class="proj__img" src="assets/media/images/projects/project01-1.png" alt="">
                                     </div>  <!-- /.project__head -->
 
+                                    <!-- <div class="project__text">
+                                        Это мой первый проект, который я создавал по видеоурокам. До этого я пробовал делать навигации и хедеры, знакомясь с HTML и CSS. 
+                                        <br>
+                                        <br>
+                                        Этот сайт я много раз делал с нуля, потому что моя главная сложность — периодические перерывы в изучении из-за необходимости зарабатывать. Но каждый раз, возвращаясь к нему, я освежал знания, замечал ошибки, находил новые решения и добавлял что-то своё, выходя за рамки исходного макета. 
+                                        <br>
+                                        <br>
+                                        Здесь представлено две версии:
+                                        1.1) Оригинальная версия, сверстанная по макету.
+                                        1.2) Версия с моими доработками и идеями. 
+                                    </div> -->
+
                                     <div class="project__text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime sequi saepe illum aliquid. Necessitatibus officiis illum doloremque dolores alias rerum tempore fugiat, soluta, minima in laboriosam, dolor minus corporis?
-                                        Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст 
+                                        Это мой первый проект, который я создавал по видеоурокам. До этого я пробовал делать навигации и хедеры, знакомясь с HTML и CSS. 
+                                    </div>
+                                    <div class="project__text">
+                                        Этот сайт я много раз делал с нуля, потому что моя главная сложность — периодические перерывы в изучении из-за необходимости зарабатывать. Но каждый раз, возвращаясь к нему, я освежал знания, замечал ошибки, находил новые решения и добавлял что-то своё, выходя за рамки исходного макета. 
+                                    </div>
+                                    <div class="project__text">
+                                        Здесь представлено две версии:
+                                    </div>
+                                    <div class="project__text">
+                                        1.1) Оригинальная версия, сверстанная по макету.
+                                    </div>
+                                    <div class="project__text">
+                                        1.2) Версия с моими доработками и идеями.
+                                        <span>(последнее изменение: favicon и фиксация заголовков меню)</span>
                                     </div>
 
+                                    <div class="project__statistics">
+                                        <div class="project__stat">
+                                            <div class="proj_stat__item  pj_st_it-1">Html /40%</div>
+                                            <div class="proj_stat__item  pj_st_it-2">Css /50%</div>
+                                            <div class="proj_stat__item  pj_st_it-3">Js /10%</div>
+                                        </div>
+                                        <div class="project__stat__line">
+                                            <div class="proj_stat__l  pj_st_l-1  proj__it-01"></div>
+                                            <div class="proj_stat__l  pj_st_l-2  proj__it-01"></div>
+                                            <div class="proj_stat__l  pj_st_l-3  proj__it-01"></div>
+                                        </div>
+                                    </div>
+
+
                                     <div class="project__btn">
-                                        <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a>
-                                        <a class="btn  --marginNone  --widthFull" href="#"><span>modified version</span> | View project</a>
+                                        <a class="proj__btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a>
+                                        <a class="proj__btn  --marginNone  --widthFull" href="#"><span>modified version</span> | View project</a>
                                     </div>
                                 </div>  <!-- /.project__info -->
                             </div>  <!-- /.project__column -->
@@ -276,13 +331,36 @@
                                     </div>  <!-- /.project__head -->
 
                                     <div class="project__text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime sequi saepe illum aliquid. Necessitatibus officiis illum doloremque dolores alias rerum tempore fugiat, soluta, minima in laboriosam, dolor minus corporis?
-                                        Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст 
+                                        Мой второй проект, который я верстал дважды. На этот раз — без опоры на уроки, полагаясь только на свой предыдущий опыт и информацию, которую находил в процессе работы.
+                                    </div>
+                                    <div class="project__text">
+                                        Тут аналогично представлено две версии:
+                                    </div>
+                                    <div class="project__text">
+                                        2.1) Первая версия без JavaScript, но уже с собственными улучшениями по сравнению с оригинальным макетом.
+                                    </div>
+                                    <div class="project__text">
+                                        2.2) Последняя, доработанная версия с подключённым JS и работающими слайдерами.
+                                        <span>(последнее изменение: favicon, фиксация заголовков меню и работающие слайдеры)</span>
                                     </div>
 
+                                    <div class="project__statistics">
+                                        <div class="project__stat">
+                                            <div class="proj_stat__item  pj_st_it-1">Html /40%</div>
+                                            <div class="proj_stat__item  pj_st_it-2">Css /50%</div>
+                                            <div class="proj_stat__item  pj_st_it-3">Js /10%</div>
+                                        </div>
+                                        <div class="project__stat__line">
+                                            <div class="proj_stat__l  pj_st_l-1  proj__it-02"></div>
+                                            <div class="proj_stat__l  pj_st_l-2  proj__it-02"></div>
+                                            <div class="proj_stat__l  pj_st_l-3  proj__it-02"></div>
+                                        </div>
+                                    </div>
+
+
                                     <div class="project__btn">
-                                        <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a>
-                                        <a class="btn  --marginNone  --widthFull" href="#"><span>modified version</span> | View project</a>
+                                        <a class="proj__btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a>
+                                        <a class="proj__btn  --marginNone  --widthFull" href="#"><span>modified version</span> | View project</a>
                                     </div>
                                 </div>  <!-- /.project__info -->
                             </div>  <!-- /.project__column -->
@@ -308,71 +386,114 @@
                                     </div>  <!-- /.project__head -->
 
                                     <div class="project__text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime sequi saepe illum aliquid. Necessitatibus officiis illum doloremque dolores alias rerum tempore fugiat, soluta, minima in laboriosam, dolor minus corporis?
-                                        Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст Это просто текст 
+                                        Ну и куда без проекта-портфолио, если ты создаёшь его сам?
                                     </div>
+                                    <div class="project__text">
+                                        Хоть сайт и сделан на коленке и на скорую руку, я подошёл к нему с душой и времени ушло вдвое больше, чем хотел).
+                                        <span>(последнее изменение: favicon, фиксация заголовков меню и Тёмная Тема для сайта)</span>
+                                    </div>
+                                    <div class="project__text">
+                                    </div>
+                                    <div class="project__text">
+                                    </div>
+
+                                    <div class="project__statistics">
+                                        <div class="project__stat">
+                                            <div class="proj_stat__item  pj_st_it-1">Html /30%</div>
+                                            <div class="proj_stat__item  pj_st_it-2">Css /50%</div>
+                                            <div class="proj_stat__item  pj_st_it-3">Js /20%</div>
+                                        </div>
+                                        <div class="project__stat__line">
+                                            <div class="proj_stat__l  pj_st_l-1  proj__it-03"></div>
+                                            <div class="proj_stat__l  pj_st_l-2  proj__it-03"></div>
+                                            <div class="proj_stat__l  pj_st_l-3  proj__it-03"></div>
+                                        </div>
+                                    </div>
+
 
                                     <div class="project__btn">
                                         <!-- <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a> -->
-                                        <a class="btn  --marginNone  --widthFull" href="#"><!-- <span>modified version</span> | -->View project</a>
+                                        <a class="proj__btn  --marginNone  --widthFull" href="#"><!-- <span>modified version</span> | -->View project</a>
                                     </div>
                                 </div>  <!-- /.project__info -->
                             </div>  <!-- /.project__column -->
                         </div>  <!-- /.project__inner -->
                     </div>  <!-- /.project__item 03 -->
-
-                    <div class="project__item  project__item--none">
-                        <div class="project__inner">
-                            <div class="project__column" id="pj_col_item-2">
-                                <div class="project__photo  proj__photo--none">
-                                    <!-- <img class="project__img  proj__img--two" src="assets/media/images/projects/project02.png" alt=""> -->
-                                    <span>Project preview</span>
-                                    <span>? ? ? ? ? ? ? ?</span>
-                                    <span>Project preview</span>
-                                    <span>? ? ? ? ? ? ? ?</span>
-                                    <span>Project preview</span>
-                                    <span>? ? ? ? ? ? ? ?</span>
-                                    <span>Project preview</span>
-                                    <span>? ? ? ? ? ? ? ?</span>
-                                    <span>Project preview</span>
-                                </div>
-                            </div>  <!-- /.project__column -->
-
-                            <div class="project__column" id="pj_col_item-1">
-                                <div class="project__info  project__info--rightPad  proj__info--none">
-                                    <div class="project__head">
-                                        <div class="project__name">
-                                            <div class="project__title">Futr.Project Name</div>
-                                            <div class="project__subtitle">Project #004:</div>
-                                        </div>
-                                        <span>?</span>
-                                        <!-- <img class="proj__img" src="assets/media/images/projects/000.png" alt=""> -->
-                                    </div>  <!-- /.project__head -->
-
-                                    <div class="project__text">
-                                        скоро скоро скоро скоро скоро 
-                                    </div>
-
-                                    <div class="project__btn">
-                                        <!-- <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a> -->
-                                        <a class="btn  --marginNone  --widthFull" href="#"><span>modified version</span> | View project</a>
-                                    </div>
-                                </div>  <!-- /.project__info -->
-                            </div>  <!-- /.project__column -->
-                        </div>  <!-- /.project__inner -->
-                    </div>  <!-- /.project__item 04 -->
-
+                    
                 </div>  <!-- /.projects -->
-
+                
             </div>  <!-- /.container -->
-            
+
             <!-- <div class="section__footer">
                 <div class="section__text">Lorem ipsum dolor sit amet proin gravida</div>
                 <a class="btn" href="#">B T N</a>
             </div> -->                               <!-- пока что не нужно -->
-        </section>  <!-- /.section -> .00000 -->
+        </section>  <!-- /.section -> .projects -->
+        
+        <!-- // version for future project -->
+        <section class="section  --futrProj  sect--animate">
+            <div class="container">
+                <div class="projects">
+                    
+                    <div class="project__item  --futrProj  pj_it--animate">
+                        <div class="project__inner">
+                            <div class="project__column  --futrProj  pj_col-2--animate" id="pj_col_item-4">
+                                <div class="project__photo  --futrProj  pj_pht--animate" id="pj_ph_item-1">
+                                    <!-- <img class="project__img  proj__img--two" src="assets/media/images/projects/project02.png" alt=""> -->
+                                    <div class="pj_photo  --futrProj  pj_ph1--animate"  id="pj_ph_item-2">Project Preview</div>
+                                    <div class="pj_photo  --futrProj  pj_ph2--animate"  id="pj_ph_item-2">?-?-?</div>
+                                    <div class="pj_photo  --futrProj  pj_ph3--animate"  id="pj_ph_item-2">(no connection)</div>
+                                    <!-- <span>? ? ? ? ? ? ? ?</span>
+                                    <span>Project preview</span>
+                                    <span>? ? ? ? ? ? ? ?</span>
+                                    <span>Project preview</span>
+                                    <span>? ? ? ? ? ? ? ?</span>
+                                    <span>Project preview</span> -->
+                                </div>
+                            </div>  <!-- /.project__column -->
+    
+                            <div class="project__column  --futrProj  pj_col-1--animate" id="pj_col_item-3">
+                                <div class="project__info  --futrProj  pj_in--animate  project__info--rightPad"  id="pj_in_item-1">
+                                    <div class="project__head  --futrProj">
+                                        <div class="project__name">
+                                            <!-- <div class="project__title  --futrProj  pj_tit--animate"  id="pj_tit_item-1">Futr.Project Name</div> --> <!-- version first-->
+                                            <div class="project__title  --futrProj  pj_tit--animate">
+                                                <div class="--futrProj  pj_titOne--animate">Futr.Project</div>
+                                                <div class="--futrProj  pj_titTwo--animate">Name</div>
+                                            </div>
+                                            <div class="project__subtitle  --futrProj  pj_sub--animate"  id="pj_sub_item-1">Project #004:</div>
+                                        </div>
+                                        <div class="project__icon  --futrProj  pj_ic--animate"  id="pj_ic_item-1">?</div>
+                                        <!-- <img class="proj__img" src="assets/media/images/projects/000.png" alt=""> -->
+                                    </div>  <!-- /.project__head -->
+    
+                                    <div class="project__text  --futrProj  pj_tex--animate"  id="pj_tex_item-1">
+                                        <div class="proj__text  --futrProj  pj_tx_item1--animate">СКОРО</div>
+                                        <div class="proj__text  --futrProj  pj_tx_item2--animate">СКОРО</div>
+                                        <div class="proj__text  --futrProj  pj_tx_item3--animate">СКОРО</div>
+                                        <div class="proj__text  --futrProj  pj_tx_item4--animate">СКОРО</div>
+                                        <div class="proj__text  --futrProj  pj_tx_item5--animate">СКОРО</div>
+                                    </div>
+    
+                                    <div class="project__btn  --futrProj  pj_bttn--animate"  id="pj_btn_item-1">
+                                        <!-- <a class="btn  --marginNone  --widthFull  --marginBot" href="#"><span>vanilla version</span> | View project</a> -->
+                                        <a class="proj__btn  --marginNone    --colorLocked  --futrProj  pj_btn--animate"  id="pj_b_item-1" href="#">
+                                            <!-- <span>modified version</span> | -->
+                                            <div class="pj_btn_text  --futrProj  pj_b_text--animate">View project</div>
+                                        </a>
+                                    </div><!-- --widthFull -->
+                                </div>  <!-- /.project__info -->
+                            </div>  <!-- /.project__column -->
+                        </div>  <!-- /.project__inner -->
+                    </div>  <!-- /.project__item 04 -->
+                </div>  <!-- /.projects -->
+            </div>  <!-- /.container -->
+        </section>  <!-- /.section -> .projects -->
 
-        <section class="section  section--background" id="three">
+
+
+
+        <section class="section  sect  section--background" id="three">
             <div class="container">
                 <div class="section__header">
                     <div class="section__title">Name Section</div>
@@ -387,7 +508,7 @@
             </div>
         </section>  <!-- /.section -> .00000 -->
 
-        <section class="section  " id="four">
+        <section class="section  sect" id="four">
             <div class="container">
                 <div class="section__header">
                     <div class="section__title">Name Section</div>
@@ -402,7 +523,7 @@
             </div>
         </section>  <!-- /.section -> .00000 -->
 
-        <section class="section  section--background" id="five">
+        <section class="section  sect  section--background" id="five">
             <div class="container">
                 <div class="section__header">
                     <div class="section__title">Name Section</div>
@@ -417,13 +538,13 @@
             </div>
         </section>  <!-- /.section -> .00000 -->
 
-        <section class="section" id="six">
+        <section class="section  sect" id="six">
             <div class="container">
                 
             </div>  <!-- /.container -->
         </section>  <!-- /.section -> .00000 -->
 
-        <footer class="footer  section--background" id="seven">
+        <footer class="footer  sect  section--background" id="seven">
             <div class="container">
                 <div class="footer__up">
                     <div class="footer__column  footer__column--first">
@@ -431,33 +552,36 @@
 							<img class="logo__img" src="assets/images/logo_edges.png">
 							<div class="logo__name">logo name</div>
 						</div>
-                        <div class="footer__text">lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit
+                        <div class="footer__text">
+                            lorem quis bibendum auctor, nisi elit consequat ipsum, 
+                            nec sagittis sem nibh elit. Duis sed odio sit amet auctror 
+                            a ornare odio non mauris vitae erat in elit
 						</div>
                     </div>  <!-- /.footer__column 01 -->
 
                     <div class="footer__column  footer__column--second">
-                        <div class="footer__title">Our Studio</div>
+                        <!-- <div class="footer__title">Our Studio</div> -->
 						<div class="footer__contact">	
-							<div class="f__contact__item">
+							<!-- <div class="f__contact__item">
 								<img class="f__contact__icon" src="assets/images/footer/footer_address.png">
 								<div class="footer__text"> название места, доп инфо, улица №00, город - район - Страна</div>
 							</div>
 							<div class="f__contact__item">
 								<img class="f__contact__icon" src="assets/images/footer/footer_phone.png">
 								<div class="footer__text">+7 (8452) 123-45-67</div>
-							</div>
+							</div> -->
 						</div> <!-- /.footer__contact -->
                     </div>  <!-- /.footer__column 02 -->
 
                     <div class="footer__column  footer__column--third">
-                        <div class="footer__title">Stay In Touch</div>
+                        <!-- <div class="footer__title">Stay In Touch</div>
 						<div class="footer__social">
 							<form class="form__subscribe">
 								<input class="subscribe__inp" type="text" name="subscribe" placeholder="Subscribe our newsletter">
 								<button class="subscribe__btn" type="submit"><span>Subscribe</span><img class="subscribe__icon" src="assets/images/footer/footer_sub_btn.png"></button>
-							</form>
+							</form> -->
 							<div class="social__content">
-								<div class="soc__ellipse">
+								<!-- <div class="soc__ellipse">
 									<a class="soc__el" href="#" target="_blank">
 										<i class="fab fa-facebook-f"></i>
 									</a>
@@ -491,7 +615,7 @@
 									<a class="soc__el" href="#" target="_blank">
 										<i class="fab fa-youtube"></i>
 									</a>
-								</div>
+								</div> -->
 
 								<!-- <div class="soc__ellipse">
 									<a class="soc__el" href="#" target="_blank">
@@ -499,12 +623,12 @@
 									</a>
 								</div> -->
 
-							</div> <!-- /.social -->
+							<!-- </div> /.social -->
 						</div> <!-- /.footer__social -->
                     </div>  <!-- /.footer__column 03 -->
                 </div>  <!-- /.footer__up -->
 
-                <div class="footer__down  f_d--alignItCent">
+                <!-- <div class="footer__down  f_d--alignItCent">
 					<div class="footer__help">
 						<div class="help__text"><a href="#">Help</a></div>
 						<div class="help__text"><a href="#">Terms & Condition</a></div>
@@ -512,7 +636,7 @@
 					</div>
 
 					<div class="footer__copyright">Copyright © 2025 - <span>Organization Naming</span></div>
-				</div>
+				</div> -->
 
             </div>  <!-- /.container -->
         </footer>  <!-- /.footer -> .00000 -->
