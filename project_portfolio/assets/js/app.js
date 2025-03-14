@@ -1,27 +1,4 @@
 $(function() {
-
-    // const themeToggle = document.getElementById("theme-toggle");
-    // const body = document.body;
-
-    // // Проверка, была ли уже выбрана тёмная тема
-    // if (localStorage.getItem("theme") === "dark") {
-    //     body.classList.add("dark-theme");
-    // }
-
-    // // Переключение темы при клике на кнопку
-    // themeToggle.addEventListener("click", () => {
-    //     body.classList.toggle("dark-theme");
-
-    //     // Сохраняем выбор в localStorage
-    //     if (body.classList.contains("dark-theme")) {
-    //         localStorage.setItem("theme", "dark");
-    //     } else {
-    //         localStorage.setItem("theme", "light");
-    //     }
-    // });
-
-
-    $(function() {
         // === ТЁМНАЯ ТЕМА | СВЕТЛАЯ ТЕМА ===
 
         const themeToggle = $("#theme-toggle");
@@ -51,6 +28,32 @@ $(function() {
             }
         });
     });
+
+
+$(function() {
+
+    // const themeToggle = document.getElementById("theme-toggle");
+    // const body = document.body;
+
+    // // Проверка, была ли уже выбрана тёмная тема
+    // if (localStorage.getItem("theme") === "dark") {
+    //     body.classList.add("dark-theme");
+    // }
+
+    // // Переключение темы при клике на кнопку
+    // themeToggle.addEventListener("click", () => {
+    //     body.classList.toggle("dark-theme");
+
+    //     // Сохраняем выбор в localStorage
+    //     if (body.classList.contains("dark-theme")) {
+    //         localStorage.setItem("theme", "dark");
+    //     } else {
+    //         localStorage.setItem("theme", "light");
+    //     }
+    // });
+
+
+    
 
 
 
@@ -131,29 +134,130 @@ $(function() {
 
 
 
+    // Intro -> when appearing on screen
+    // Intro Animate - ia / IA
+
+    // Получаем все элементы, которые которые будут подвергаться анимации
+    const itemsIA = document.querySelectorAll('.--intAnim');
+
+    // Опции для наблюдателя
+    const optionsIA = {
+        root: null, // Относительно окна браузера
+        threshold: 1.0 // 100% элемента должно быть видно
+    };
+
+    // Функция обратного вызова для наблюдателя
+    const callbackIA = (entries, observerIA) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Если элемент полностью на экране, добавляем класс animate для анимации
+                if (entry.target.classList.contains('pht__img')) {
+                    entry.target.classList.add('int-anim'); // (1) анимируется project__item
+                } else if (entry.target.classList.contains('photo__info')) {
+                    entry.target.classList.add('int-anim'); // (2) анимируется project__column 1
+                } else if (entry.target.classList.contains('photo__social')) {
+                    entry.target.classList.add('int-anim'); // (3) анимируется project__column 2
+                
+                } else if (entry.target.classList.contains('rope')) {
+                    entry.target.classList.add('int-anim'); // (4) анимируется project__photo
+                } else if (entry.target.classList.contains('r_i--one')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 01
+                } else if (entry.target.classList.contains('r_i--two')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('r_i--three')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('r_i--four')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('r_i--five')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                
+                } else if (entry.target.classList.contains('title__after')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('t_l--one')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('t_l--two')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                
+                } else if (entry.target.classList.contains('borders')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('b_a--one')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('b_a--two')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('b_a--three')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('b_a--four')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                
+                } else if (entry.target.classList.contains('tt_l--one')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('tt_l--two')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('tt_l--three')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('tt_l--four')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('tt_l--five')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('tt_l--six')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                } else if (entry.target.classList.contains('tt_l--seven')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                
+                } else if (entry.target.classList.contains('int__btn')) {
+                    entry.target.classList.add('int-anim'); // (5) анимируется pj__photo 02
+                }
+
+            // } else {
+                // Если элемент выходит из экрана, убираем класс animate
+                // entry.target.classList.remove('animate');
+            }
+        });
+    };
+
+    // Создаём наблюдатель для каждого элемента
+    const observerIA = new IntersectionObserver(callbackIA, optionsIA);
+
+    // Наблюдаем за каждым элементом
+    itemsIA.forEach(item => {
+        observerIA.observe(item);
+    });
+    
+    // });
+    
 
 
-    // Projects -> starting animation while scrolling
+
+
+    
+
+
+
+
+
+
+
+// Projects -> starting animation while scrolling
 
         // version.01
-    // cheakScrollToProject(scrollAnimateProjectOne);
+            // cheakScrollToProject(scrollAnimateProjectOne);
 
-    // $(window).on("scroll", function() {
-    //     // console.log(introHeight);
-    //     // console.log(scrollOffset);
-        
-    //     scrollAnimateProjectOne = $(this).scrollTop();
+            // $(window).on("scroll", function() {
+            //     // console.log(introHeight);
+            //     // console.log(scrollOffset);
+                
+            //     scrollAnimateProjectOne = $(this).scrollTop();
 
-    //     cheakScrollToProject(scrollAnimateProjectOne);
-    // });
+            //     cheakScrollToProject(scrollAnimateProjectOne);
+            // });
 
-    // function cheakScrollToProject(scrollAnimateProjectOne) {
-    //     if(scrollAnimateProjectOne >= projectItemOneHeight) {
-    //         projColOne.addClass("active");
-    //     } else {
-    //         projColOne.removeClass("active");
-    //     }
-    // };
+            // function cheakScrollToProject(scrollAnimateProjectOne) {
+            //     if(scrollAnimateProjectOne >= projectItemOneHeight) {
+            //         projColOne.addClass("active");
+            //     } else {
+            //         projColOne.removeClass("active");
+            //     }
+            // };
     
 
 
@@ -208,8 +312,8 @@ $(function() {
                 // Если элемент на экране, добавляем класс animate для анимации
                 entry.target.classList.add('animate');
             } else {
-                // Если элемент выходит из экрана, убираем класс animate
-                // entry.target.classList.remove('animate');
+                // Если элемент выходит из экрана, убираю класс animate (по желанию)
+                entry.target.classList.remove('animate');
             }
         });
     };
@@ -239,7 +343,7 @@ $(function() {
     // Опции для наблюдателя
     const optionsFP = {
         root: null, // Относительно окна браузера
-        threshold: 1.0 // 70% элемента должно быть видно
+        threshold: 1.0 // 100% элемента должно быть видно
     };
 
     // Функция обратного вызова для наблюдателя
@@ -357,6 +461,260 @@ document.addEventListener("DOMContentLoaded", () => {
   
     sections.forEach((section) => observer.observe(section));
   
-    console.log("Секции найдены:", sections);
+    // console.log("Секции найдены:", sections);
   });
   
+
+
+
+// LAZY LOADING
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const sections = document.querySelectorAll(".lazy-section");
+//     const images = document.querySelectorAll(".lazy-img");
+
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add("loaded");
+
+//                 // Если это секция, загружаем все изображения внутри неё
+//                 const imgs = entry.target.querySelectorAll(".lazy-img");
+//                 imgs.forEach(img => {
+//                     img.src = img.dataset.src; // Подставляем src из data-src
+//                     img.classList.add("loaded");
+//                 });
+
+//                 observer.unobserve(entry.target);
+//             }
+//         });
+//     });
+
+//     sections.forEach(section => observer.observe(section));
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".lazy-section");
+    const images = document.querySelectorAll(".lazy-img");
+    const bgElements = document.querySelectorAll(".lazy-bg");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("loaded");
+
+                // Для изображений <img>
+                if (entry.target.tagName === "IMG" && entry.target.dataset.src) {
+                    entry.target.src = entry.target.dataset.src;
+                    entry.target.classList.add("loaded");
+                }
+
+                // Для фоновых изображений
+                if (entry.target.classList.contains("lazy-bg") && entry.target.dataset.bg) {
+                    entry.target.style.backgroundImage = `url(${entry.target.dataset.bg})`;
+                    entry.target.classList.add("loaded");
+                }
+
+                observer.unobserve(entry.target); // Остановить наблюдение после загрузки
+            }
+        });
+    });
+
+    sections.forEach(section => observer.observe(section));
+    images.forEach(img => observer.observe(img));
+    bgElements.forEach(bg => observer.observe(bg));
+});
+
+
+
+
+
+
+
+// About -> slider
+
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".about__content");
+    const buttons = document.querySelectorAll(".slider__item");
+  
+    // Проверяем, есть ли слайды
+    if (slides.length === 0 || buttons.length === 0) {
+        console.error("Слайды или кнопки не найдены!");
+        return;
+    }
+  
+    buttons.forEach((btn, index) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+  
+            // Убираем активные классы
+            slides.forEach(slide => slide.classList.remove("active"));
+            buttons.forEach(button => button.classList.remove("active"));
+  
+            // Добавляем активный класс к нужному слайду и кнопке
+            if (slides[index]) {
+                slides[index].classList.add("active");
+                // console.log("Активный слайд: ", slides[index]); // проверка актив слайда
+            }
+            btn.classList.add("active");
+        });
+    });
+  
+    // Делаем первый слайд активным по умолчанию
+    slides[0].classList.add("active");
+    buttons[0].classList.add("active");
+  });
+
+
+
+
+// About -> change photo
+
+// версия для одного набора изображений
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const images = [
+//         "assets/media/images/20220402_125013.jpg",
+//         "assets/media/images/20220304_091322.jpg",
+//         "assets/media/images/20220304_153144.jpg",
+//         "assets/media/images/20220307_092252.jpg"];
+//     let currentIndex = 0;
+//     let intervalId;
+//     const imgElement = document.getElementById("changingImage");
+
+//     function startImageRotation() {
+//         if (!intervalId) {
+//             intervalId = setInterval(() => {
+//                 currentIndex = (currentIndex + 1) % images.length;
+//                 imgElement.style.opacity = "0"; // Анимация исчезновения
+//                 setTimeout(() => {
+//                     imgElement.src = images[currentIndex];
+//                     imgElement.style.opacity = "1"; // Анимация появления
+//                 }, 700);
+//             }, 5000);
+//         }
+//     }
+
+//     function stopImageRotation() {
+//         clearInterval(intervalId);
+//         intervalId = null;
+//     }
+
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 startImageRotation();
+//             } else {
+//                 stopImageRotation();
+//             }
+//         });
+//     }, { threshold: 0.5 });
+
+//     observer.observe(document.querySelector(".section--about"));
+// });
+
+
+  
+document.addEventListener("DOMContentLoaded", () => {
+    // Разные наборы изображений
+    const imagesDesktop = [
+        "assets/media/images/about/desktop/about_desktop-001-20220304_084348.png",
+        "assets/media/images/about/desktop/about_desktop-003-20220304_091322.png",
+        "assets/media/images/about/desktop/about_desktop-004-20220304_091324.png",
+        "assets/media/images/about/desktop/about_desktop-005-20220304_153144.png",
+        "assets/media/images/about/desktop/about_desktop-006-20220307_103557.png",
+        "assets/media/images/about/desktop/about_desktop-007-20220311_104529.png",
+        "assets/media/images/about/desktop/about_desktop-008-20220312_085643.png",
+        "assets/media/images/about/desktop/about_desktop-009-20220312_085715.png",
+        "assets/media/images/about/desktop/about_desktop-010-20220321_200150.png",
+        "assets/media/images/about/desktop/about_desktop-011-20220321_200156.png",
+        "assets/media/images/about/desktop/about_desktop-012-20220323_090331.png",
+        "assets/media/images/about/desktop/about_desktop-013-20220331_073813.png",
+        "assets/media/images/about/desktop/about_desktop-014-20220402_125013.png",
+        "assets/media/images/about/desktop/about_desktop-015-20220409_062507.png",
+        "assets/media/images/about/desktop/about_desktop-016-20220413_084709.png",
+        "assets/media/images/about/desktop/about_desktop-019-20220413_090427.png",
+        "assets/media/images/about/desktop/about_desktop-020-20220413_090439.png",
+        "assets/media/images/about/desktop/about_desktop-021-20220413_090449.png",
+        "assets/media/images/about/desktop/about_desktop-022-20220413_090536.png",
+        "assets/media/images/about/desktop/about_desktop-023-20220413_090620.png",
+        "assets/media/images/about/desktop/about_desktop-025-20220421_163130.png",
+        "assets/media/images/about/desktop/about_desktop-027-20220422_160438.png",
+        "assets/media/images/about/desktop/about_desktop-028-20220426_200049.png",
+        "assets/media/images/about/desktop/about_desktop-030-20220430_133826.png",
+        "assets/media/images/about/desktop/about_desktop-031-20220520_205056.png"];
+    const imagesMobile = [
+        "assets/media/images/about/mobile/about_mobile-001-20220304_084348.png",
+        "assets/media/images/about/mobile/about_mobile-002-20220304_090241.png",
+        "assets/media/images/about/mobile/about_mobile-005-20220304_091324.png",
+        "assets/media/images/about/mobile/about_mobile-007-20220307_103557.png",
+        "assets/media/images/about/mobile/about_mobile-008-20220311_104529.png",
+        "assets/media/images/about/mobile/about_mobile-010-20220312_085715.png",
+        "assets/media/images/about/mobile/about_mobile-011-20220321_200150.png",
+        "assets/media/images/about/mobile/about_mobile-012-20220321_200156.png",
+        "assets/media/images/about/mobile/about_mobile-014-20220331_073813.png",
+        "assets/media/images/about/mobile/about_mobile-015-20220402_125013.png",
+        "assets/media/images/about/mobile/about_mobile-016-20220409_062507.png",
+        "assets/media/images/about/mobile/about_mobile-017-20220413_084709.png",
+        "assets/media/images/about/mobile/about_mobile-019-20220413_085611.png",
+        "assets/media/images/about/mobile/about_mobile-021-20220413_090439.png",
+        "assets/media/images/about/mobile/about_mobile-024-20220413_090620.png",
+        "assets/media/images/about/mobile/about_mobile-025-20220413_092401.png",
+        "assets/media/images/about/mobile/about_mobile-027-20220421_163133.png",
+        "assets/media/images/about/mobile/about_mobile-028-20220422_160438.png",
+        "assets/media/images/about/mobile/about_mobile-030-20220426_200120.png",
+        "assets/media/images/about/mobile/about_mobile-031-20220430_133826.png",
+        "assets/media/images/about/mobile/about_mobile-032-20220520_205056.png"];
+
+    let currentImages = imagesDesktop; // Начальный набор
+    let currentIndex = 0;
+    let intervalId;
+    const imgElement = document.getElementById("changingImage");
+
+    function updateImageSet() {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            currentImages = imagesMobile; // Если экран узкий
+        } else {
+            currentImages = imagesDesktop; // Если экран широкий
+        }
+        currentIndex = 0;
+        imgElement.src = currentImages[currentIndex]; // Меняется изображение сразу
+    }
+
+    function startImageRotation() {
+        if (!intervalId) {
+            intervalId = setInterval(() => {
+                currentIndex = (currentIndex + 1) % currentImages.length;
+                imgElement.style.opacity = "0"; // Исчезновение
+                setTimeout(() => {
+                    imgElement.src = currentImages[currentIndex];
+                    imgElement.style.opacity = "1"; // Появление
+                }, 500);
+            }, 4000);
+        }
+    }
+
+    function stopImageRotation() {
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startImageRotation();
+            } else {
+                stopImageRotation();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector(".section--about"));
+
+    // Отслеживание изменения ширины экрана
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    mediaQuery.addEventListener("change", updateImageSet);
+
+    // Вызов сразу, чтобы применить правильный набор изображений при загрузке
+    updateImageSet();
+});
