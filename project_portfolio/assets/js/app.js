@@ -59,6 +59,7 @@ $(function() {
 
     
     var header = $("#header"),
+        navToggle = $("#nav-toggle"),
         introHeight = $("#intro").innerHeight(),
         scrollOffset = $(window).scrollTop(),
 
@@ -81,8 +82,10 @@ $(function() {
     function cheakScroll(scrollOffset) {
         if(scrollOffset >= introHeight) {
             header.addClass("fixed");
+            navToggle.addClass("fixed");
         } else {
             header.removeClass("fixed");
+            navToggle.removeClass("fixed");
         }
     };
 
@@ -297,7 +300,7 @@ $(function() {
     
         // version.03
     // Получаем все элементы, которые которые будут подвергаться анимации
-    const items = document.querySelectorAll('.project__column');
+    const items = document.querySelectorAll('.projOpen-animate');
 
     // Опции для наблюдателя
     const options = {
@@ -672,7 +675,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgElement = document.getElementById("changingImage");
 
     function updateImageSet() {
-        if (window.matchMedia("(max-width: 768px)").matches) {
+        if (window.matchMedia("(max-width: 770px)").matches) {
             currentImages = imagesMobile; // Если экран узкий
         } else {
             currentImages = imagesDesktop; // Если экран широкий
@@ -712,7 +715,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(document.querySelector(".section--about"));
 
     // Отслеживание изменения ширины экрана
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const mediaQuery = window.matchMedia("(max-width: 770px)");
     mediaQuery.addEventListener("change", updateImageSet);
 
     // Вызов сразу, чтобы применить правильный набор изображений при загрузке
