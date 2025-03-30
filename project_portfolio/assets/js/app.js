@@ -1,73 +1,90 @@
+
+// === ТЁМНАЯ ТЕМА | СВЕТЛАЯ ТЕМА ===
 $(function() {
-        // === ТЁМНАЯ ТЕМА | СВЕТЛАЯ ТЕМА ===
+    // === ТЁМНАЯ ТЕМА | СВЕТЛАЯ ТЕМА ===
 
-        const themeToggle = $("#theme-toggle");
-        const body = $("body");
-    
-        // Проверка темы ОС и установить её, если пользователь не менял вручную
-        if (!localStorage.getItem("theme")) {
-            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                body.addClass("dark-theme");
-            }
-        } else {
-            // Если тема уже выбрана вручную, применить её
-            if (localStorage.getItem("theme") === "dark") {
-                body.addClass("dark-theme");
-            }
+    const themeToggle = $("#theme-toggle");
+    const body = $("body");
+
+    // Проверка темы ОС и установить её, если пользователь не менял вручную
+    if (!localStorage.getItem("theme")) {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            body.addClass("dark-theme");
         }
-    
-        // Переключение темы при клике на кнопку
-        themeToggle.on("click", function() {
-            body.toggleClass("dark-theme");
+    } else {
+        // Если тема уже выбрана вручную, применить её
+        if (localStorage.getItem("theme") === "dark") {
+            body.addClass("dark-theme");
+        }
+    }
 
-            // Сохраняем выбор в localStorage
-            if (body.hasClass("dark-theme")) {
-                localStorage.setItem("theme", "dark");
-            } else {
-                localStorage.setItem("theme", "light");
+    // Переключение темы при клике на кнопку
+    themeToggle.on("click", function() {
+        body.toggleClass("dark-theme");
+
+        // Сохраняем выбор в localStorage
+        if (body.hasClass("dark-theme")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
+});
+
+// === LAZY LOADING ===
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".lazy-section");
+    const images = document.querySelectorAll(".lazy-img");
+    const bgElements = document.querySelectorAll(".lazy-bg");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("loaded");
+
+                // Для изображений <img>
+                if (entry.target.tagName === "IMG" && entry.target.dataset.src) {
+                    entry.target.src = entry.target.dataset.src;
+                    entry.target.classList.add("loaded");
+                }
+
+                // Для фоновых изображений
+                if (entry.target.classList.contains("lazy-bg") && entry.target.dataset.bg) {
+                    entry.target.style.backgroundImage = `url(${entry.target.dataset.bg})`;
+                    entry.target.classList.add("loaded");
+                }
+
+                observer.unobserve(entry.target); // Остановить наблюдение после загрузки
             }
         });
     });
 
+    sections.forEach(section => observer.observe(section));
+    images.forEach(img => observer.observe(img));
+    bgElements.forEach(bg => observer.observe(bg));
+});
+
+
+
+
+
+
 
 $(function() {
 
-    // const themeToggle = document.getElementById("theme-toggle");
-    // const body = document.body;
+// === H E A D E R ===
 
-    // // Проверка, была ли уже выбрана тёмная тема
-    // if (localStorage.getItem("theme") === "dark") {
-    //     body.classList.add("dark-theme");
-    // }
-
-    // // Переключение темы при клике на кнопку
-    // themeToggle.addEventListener("click", () => {
-    //     body.classList.toggle("dark-theme");
-
-    //     // Сохраняем выбор в localStorage
-    //     if (body.classList.contains("dark-theme")) {
-    //         localStorage.setItem("theme", "dark");
-    //     } else {
-    //         localStorage.setItem("theme", "light");
-    //     }
-    // });
-
-
-    
-
-
-
-    
     var header = $("#header"),
         navToggle = $("#nav-toggle"),
         introHeight = $("#intro").innerHeight(),
-        scrollOffset = $(window).scrollTop(),
+        scrollOffset = $(window).scrollTop();
 
-        projColOne = $("#projColOne"),
-        projectItemOneHeight = $("#projectItemOne").innerHeight(),
-        scrollAnimateProjectOne = $(window).scrollTop();
+        // projColOne = $("#projColOne"),
+        // projectItemOneHeight = $("#projectItemOne").innerHeight(),
+        // scrollAnimateProjectOne = $(window).scrollTop();
 
-    // Header -> fixed header
+// Header -> fixed header
     cheakScroll(scrollOffset);
 
     $(window).on("scroll", function() {
@@ -89,13 +106,7 @@ $(function() {
         }
     };
 
-
-
-
-
-
-
-    // Header -> smooth scroll
+// Header -> smooth scroll
     $("[data-scroll]").on("click", function(event) {
         event.preventDefault();
 
@@ -103,7 +114,7 @@ $(function() {
             blockId = $this.data('scroll'),
             blockOffset = $(blockId).offset().top;
 
-        $("#navbar a").removeClass("active");
+        $("nav__link").removeClass("active");
         $this.addClass("active");
 
         $("html, body").animate({
@@ -111,8 +122,7 @@ $(function() {
         }, 500);
     });
 
-
-    // Header -> Menu nav toggle
+// Header -> Menu nav toggle OPEN
     $("#nav-toggle").on("click", function(event) {
         event.preventDefault();
 
@@ -120,9 +130,7 @@ $(function() {
         $("#navbar").toggleClass("active");
     });
 
-
-
-    // Header -> Menu nav toggle -> сворачивание после выбора "пути"
+// Header -> Menu nav toggle CLOSE -> сворачивание после выбора "пути"
     $("#navbar a").on("click", function(event) {
         event.preventDefault();
 
@@ -131,14 +139,43 @@ $(function() {
         $("#nav-toggle").toggleClass("active", false);
     });
 
+// Header -> active link
+
+// document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".sect");
+    const menuLinks = document.querySelectorAll(".nav__link");
+  
+    const observerOptions = {
+        root: null,
+        threshold: 0.15, // 15% секции в видимой области
+    };
+  
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                menuLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").substring(1) === entry.target.id) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+  
+    sections.forEach((section) => observer.observe(section));
+  
+    // console.log("Секции найдены:", sections);
+//   });
+  
 
 
 
 
+// === I N T R O ===
 
-
-    // Intro -> when appearing on screen
-    // Intro Animate - ia / IA
+// Intro -> when appearing on screen
+// Intro Animate - ia / IA
 
     // Получаем все элементы, которые которые будут подвергаться анимации
     const itemsIA = document.querySelectorAll('.--intAnim');
@@ -232,84 +269,24 @@ $(function() {
 
 
 
-    
-
-
-
-
-
+// === P R O J E C T ===
 
 
 // Projects -> starting animation while scrolling
+// Projects - pj / PJ
 
-        // version.01
-            // cheakScrollToProject(scrollAnimateProjectOne);
-
-            // $(window).on("scroll", function() {
-            //     // console.log(introHeight);
-            //     // console.log(scrollOffset);
-                
-            //     scrollAnimateProjectOne = $(this).scrollTop();
-
-            //     cheakScrollToProject(scrollAnimateProjectOne);
-            // });
-
-            // function cheakScrollToProject(scrollAnimateProjectOne) {
-            //     if(scrollAnimateProjectOne >= projectItemOneHeight) {
-            //         projColOne.addClass("active");
-            //     } else {
-            //         projColOne.removeClass("active");
-            //     }
-            // };
-    
-
-
-
-        // version.02
-    // Получаем элемент секции
-    // const section = document.getElementById('projColOne');
-
-    // // Опции для наблюдателя
-    // const options = {
-    //     root: null, // Относительно всего окна браузера
-    //     threshold: 0.5 // Когда 50% элемента видны на экране
-    // };
-    
-    // // Функция обратного вызова для наблюдателя
-    // const callback = (entries, observer) => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             // Если секция появилась на экране, добавляем класс для анимации
-    //             entry.target.classList.add('active');
-    //         } else {
-    //             // Если секция покидает экран, можно убрать класс (опционально)
-    //             entry.target.classList.remove('active');
-    //         }
-    //     });
-    // };
-    
-    // // Создаём наблюдатель
-    // const observer = new IntersectionObserver(callback, options);
-    
-    // // Наблюдаем за секцией
-    // observer.observe(section);
-
-
-
-    
-    
-        // version.03
+// version.03
     // Получаем все элементы, которые которые будут подвергаться анимации
     const items = document.querySelectorAll('.projOpen-animate');
 
     // Опции для наблюдателя
     const options = {
         root: null, // Относительно окна браузера
-        threshold: 0.7 // 70% элемента должно быть видно
+        threshold: 0.5 // 50% элемента должно быть видно
     };
 
     // Функция обратного вызова для наблюдателя
-    const callback = (entries, observer) => {
+    const callback = (entries, observerPJ) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Если элемент на экране, добавляем класс animate для анимации
@@ -322,23 +299,16 @@ $(function() {
     };
 
     // Создаём наблюдатель для каждого элемента
-    const observer = new IntersectionObserver(callback, options);
+    const observerPJ = new IntersectionObserver(callback, options);
 
     // Наблюдаем за каждым элементом
     items.forEach(item => {
-        observer.observe(item);
+        observerPJ.observe(item);
     });
 
 
-
-
-
-
-
-
-
-        // version for future project
-        // future project - fp / FP
+// version for future project
+// future project - fp / FP
 
     // Получаем все элементы, которые которые будут подвергаться анимации
     const itemsFP = document.querySelectorAll('.--futrProj');
@@ -432,110 +402,15 @@ $(function() {
         observerFP.observe(item);
     });
     
-  });
-
-
-
-
-
-// Header -> active link
-
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".sect");
-    const menuLinks = document.querySelectorAll(".nav__link");
-  
-    const observerOptions = {
-        root: null,
-        threshold: 0.3, // 50% секции в видимой области
-    };
-  
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                menuLinks.forEach((link) => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href").substring(1) === entry.target.id) {
-                        link.classList.add("active");
-                    }
-                });
-            }
-        });
-    }, observerOptions);
-  
-    sections.forEach((section) => observer.observe(section));
-  
-    // console.log("Секции найдены:", sections);
-  });
-  
-
-
-
-// LAZY LOADING
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     const sections = document.querySelectorAll(".lazy-section");
-//     const images = document.querySelectorAll(".lazy-img");
-
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.classList.add("loaded");
-
-//                 // Если это секция, загружаем все изображения внутри неё
-//                 const imgs = entry.target.querySelectorAll(".lazy-img");
-//                 imgs.forEach(img => {
-//                     img.src = img.dataset.src; // Подставляем src из data-src
-//                     img.classList.add("loaded");
-//                 });
-
-//                 observer.unobserve(entry.target);
-//             }
-//         });
-//     });
-
-//     sections.forEach(section => observer.observe(section));
-// });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".lazy-section");
-    const images = document.querySelectorAll(".lazy-img");
-    const bgElements = document.querySelectorAll(".lazy-bg");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("loaded");
-
-                // Для изображений <img>
-                if (entry.target.tagName === "IMG" && entry.target.dataset.src) {
-                    entry.target.src = entry.target.dataset.src;
-                    entry.target.classList.add("loaded");
-                }
-
-                // Для фоновых изображений
-                if (entry.target.classList.contains("lazy-bg") && entry.target.dataset.bg) {
-                    entry.target.style.backgroundImage = `url(${entry.target.dataset.bg})`;
-                    entry.target.classList.add("loaded");
-                }
-
-                observer.unobserve(entry.target); // Остановить наблюдение после загрузки
-            }
-        });
-    });
-
-    sections.forEach(section => observer.observe(section));
-    images.forEach(img => observer.observe(img));
-    bgElements.forEach(bg => observer.observe(bg));
 });
 
 
 
 
 
-
+// === A B O U T ===
 
 // About -> slider
-
 document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll(".about__content");
     const buttons = document.querySelectorAll(".slider__item");
@@ -568,10 +443,8 @@ document.addEventListener("DOMContentLoaded", () => {
     buttons[0].classList.add("active");
   });
 
-
-
-
 // About -> change photo
+
 
 // версия для одного набора изображений
 
@@ -603,7 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //         intervalId = null;
 //     }
 
-//     const observer = new IntersectionObserver((entries) => {
+//     const observerACP = new IntersectionObserver((entries) => {
 //         entries.forEach(entry => {
 //             if (entry.isIntersecting) {
 //                 startImageRotation();
@@ -613,11 +486,10 @@ document.addEventListener("DOMContentLoaded", () => {
 //         });
 //     }, { threshold: 0.5 });
 
-//     observer.observe(document.querySelector(".section--about"));
+//     observerACP.observe(document.querySelector(".section--about"));
 // });
 
-
-  
+// About change photo - acp / ACP
 document.addEventListener("DOMContentLoaded", () => {
     // Разные наборы изображений
     const imagesDesktop = [
@@ -702,7 +574,7 @@ document.addEventListener("DOMContentLoaded", () => {
         intervalId = null;
     }
 
-    const observer = new IntersectionObserver((entries) => {
+    const observerACP = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 startImageRotation();
@@ -712,7 +584,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.5 });
 
-    observer.observe(document.querySelector(".section--about"));
+    observerACP.observe(document.querySelector(".section--about"));
 
     // Отслеживание изменения ширины экрана
     const mediaQuery = window.matchMedia("(max-width: 770px)");
