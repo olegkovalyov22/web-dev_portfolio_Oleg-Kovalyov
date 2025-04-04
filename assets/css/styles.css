@@ -1974,8 +1974,9 @@ body {
             line-height: 1.2;
         }
         /* .project__text:last-child {margin-bottom: 0px;} */
-        .project__text span {color: #00a69a;}
-
+        .pj_tt--changes {color: #00a69a;}
+        .pj_tt--updates {color: #00a4ff;}
+        
 
         .project__statistics {margin: 10px 0;}
         .project__stat {
