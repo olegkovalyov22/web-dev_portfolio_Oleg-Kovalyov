@@ -564,8 +564,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     imgElement.src = currentImages[currentIndex];
                     imgElement.style.opacity = "1"; // Появление
-                }, 500);
-            }, 4000);
+                }, 400);
+            }, 3500);
         }
     }
 
@@ -582,9 +582,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 stopImageRotation();
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
-    observerACP.observe(document.querySelector(".section--about"));
+    observerACP.observe(document.querySelector(".image--about"));
 
     // Отслеживание изменения ширины экрана
     const mediaQuery = window.matchMedia("(max-width: 770px)");
